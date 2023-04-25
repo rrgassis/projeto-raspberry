@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  outline-style: none;
+  color: #333;
+}
+
+a {
+  color: #333;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+
+.user {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+input {
+  padding: 5px 6px;
+  border-radius: 8px;
+  border: 2px solid black;
+  border: 2px solid #d8d8d8;
+  background-color: #f7f7f7;
+  font-weight: 500;
+}
+
+.input-container {
+  margin-top: 1rem;
+}
+
+input::placeholder {
+  text-align: center;
+  font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+button {
+  margin-top: .5rem;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #e9e8e8;
+  color: #333;
+  border: 2px solid #333;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(.9);
+}
+
+.cadastro {
+  margin-top: 3rem;
+}
+
+.logo {
+  position: fixed;
+  right: 40px;
+  bottom: 0px;
+
+}
+
+.bosch {
+  color: #FF000F;
+}
+
+.msg {
+  margin-top: 2rem;
+}
+
+.voltar {
+  width: 50%;
+  text-align: center;
+}
+
+.btn-cadastrar {
+  margin-top: 2rem;
+  font-size: 12pt;
+}
+
+/* utility */
+
+.center {
+  text-align: center;
+}
+
+.bottom {
+  margin-top: 10rem;
+}
+
+#comprovante{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.title {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.erro {
+  color: red;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.erro-img {
+  margin-top: 5rem;
+}
+</style>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title> 🕗 Registro de ponto </title>
+</head>
+
+<body>
+    <h1 class="title"> BEM VINDO AO SISTEMA DE PONTO DIGITAL </h1>
+  <main>
+    <section>
+      <h2 class="section-title center user"> OLÁ <span class="bosch">@{{nome}}</span></h2>
+      <p class="center"> SEU PONTO FOI REGISTRADO DIA <span class="date"></span> </p>
+
+      <div class="bottom">
+        <h2 id="comprovante"> O COMPROVANTE DO SEU REGISTRO FOI ENVIADO NO SEU TELEFONE, POR SMS. </h2>
+        <form action="voltar_inicial" method="POST" class="center">
+          <button class="voltar" type="submit"> Voltar à tela inicial</button>
+        </form>
+      </div>
+
+    </section>
+  </main>
+  <div class="logo">
+    <img width ="240" src="https://logosmarcas.net/wp-content/uploads/2020/08/Bosch-Logo.png">
+  </div>
+  <script class="date">
+const inputDate = document.querySelector('.date')
+const date = new Date()
+
+function setDate() {
+  inputDate.innerHTML += date.toLocaleDateString() + ' às ' + date.toLocaleTimeString()
+}
+
+setDate()
+
+// export default setDate
+</script>
+
+</body>
+
+</html>
